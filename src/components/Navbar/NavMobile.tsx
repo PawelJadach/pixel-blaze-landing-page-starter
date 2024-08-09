@@ -17,7 +17,7 @@ export const NavMobile = () => {
 	return (
 		<div
 			ref={ref}
-			className="lg:hidden p-6 fixed top-0 left-0 right-0 bg-dark z-10"
+			className="lg:hidden p-6 fixed top-0 left-0 right-0 bg-dark z-10 max-w-[100vw]"
 		>
 			<div className="flex justify-between">
 				<div

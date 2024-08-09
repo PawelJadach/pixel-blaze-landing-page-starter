@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/utils/cn";
+import { AOSInit } from "@/lib/AOSInit";
 
 const font = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = config.metadata.root;
@@ -16,7 +17,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang={config.locale} className="scroll-smooth scroll-pt-32">
+		<html lang={config.locale} className="scroll-smooth scroll-pt-32  overflow-y-auto overflow-x-hidden">
 			<head>
 				<link
 					rel="apple-touch-icon"
@@ -38,7 +39,8 @@ export default function RootLayout({
 				<link rel="manifest" href="/site.webmanifest" />
 				<meta name="google" content="notranslate" />
 			</head>
-			<body className={cn(font.className, "min-h-screen mt-32")}>
+			<body className={cn(font.className, "min-h-screen mt-32 max-w-[100vw] overflow-hidden")}>
+				<AOSInit />
 				<Navbar />
 				<div>{children}</div>
 				<Footer />
